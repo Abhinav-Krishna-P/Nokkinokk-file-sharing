@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: nokkinokk-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - uploads_volume:/app/uploads
+    environment:
+      - PORT=5000
+      - NODE_ENV=production
+      # DB Settings (Point to your existing PostgreSQL container)
+      - DB_HOST=${DB_HOST:-host.docker.internal}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASSWORD=${DB_PASSWORD:-postgres}
+      - DB_NAME=${DB_NAME:-nokkinokk}
+      # Redis Settings (Point to your existing Redis container)
+      - REDIS_HOST=${REDIS_HOST:-host.docker.internal}
+      - REDIS_PORT=${REDIS_PORT:-6379}
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      - UPLOAD_DIR=./uploads
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: nokkinokk-frontend
+    restart: unless-stopped
+    ports:
+      - "8080:80" # Maps port 8080 on VPS to Nginx port 80 inside container
+    depends_on:
+      - backend
+
+volumes:
+  uploads_volume:
+    driver: local
