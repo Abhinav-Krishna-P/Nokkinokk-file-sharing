@@ -37,6 +37,11 @@ services:
     depends_on:
       - backend
 
+networks:
+  default:
+    name: evolution-network
+    external: true
+
 volumes:
   uploads_volume:
     driver: local
