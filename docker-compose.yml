@@ -33,7 +33,7 @@ services:
     container_name: nokkinokk-frontend
     restart: unless-stopped
     ports:
-      - "8080:80" # Maps port 8080 on VPS to Nginx port 80 inside container
+      - "8090:80" # Maps port 8090 on VPS to Nginx port 80 inside container
     depends_on:
       - backend
 
