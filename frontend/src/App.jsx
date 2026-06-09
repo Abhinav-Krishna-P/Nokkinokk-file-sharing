@@ -91,17 +91,24 @@ function App() {
         marginBottom: '3rem'
       }}>
         <div className="glass-panel" style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <Shield size={24} style={{ color: 'var(--color-primary)' }} />
+          <HardDrive size={24} style={{ color: 'var(--color-secondary)' }} />
           <div>
-            <h4 style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>Secure Transfer</h4>
-            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Fail-proof expiry & PIN rate limiting</p>
+            <h4 style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>100 MB Regular Upload</h4>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Optimized for quick optimized uploads</p>
           </div>
         </div>
         <div className="glass-panel" style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <HardDrive size={24} style={{ color: 'var(--color-secondary)' }} />
           <div>
-            <h4 style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>80 MB Storage Limit</h4>
-            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Optimized for quick uploads</p>
+            <h4 style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>50GB Network File Transfer</h4>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Capped For Heavy File Transfer</p>
+          </div>
+        </div>
+        <div className="glass-panel" style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <Shield size={24} style={{ color: 'var(--color-primary)' }} />
+          <div>
+            <h4 style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>Secure Transfer</h4>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Fail-proof expiry & PIN rate limiting</p>
           </div>
         </div>
         <div className="glass-panel" style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>

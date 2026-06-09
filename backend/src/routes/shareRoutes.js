@@ -129,6 +129,18 @@ router.get('/retrieve/:pin', pinRateLimiter, async (req, res) => {
   }
 
   try {
+    // 0. Check if it's a P2P session first
+    const p2pSessionData = await redis.get(`p2p:pin:${pin}`);
+    if (p2pSessionData) {
+      const session = JSON.parse(p2pSessionData);
+      return res.json({
+        success: true,
+        type: 'p2p',
+        expiresAt: session.expiresAt,
+        data: { files: session.files }
+      });
+    }
+
     // 1. Look up in Redis
     let uploadId = await redis.get(`pin:${pin}`);
     

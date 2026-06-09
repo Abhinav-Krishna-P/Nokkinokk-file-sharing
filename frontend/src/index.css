@@ -838,3 +838,82 @@ h1, h2, h3, h4 {
     transform: translateX(12px);
   }
 }
+
+/* P2P Mode Toggle Switch and Statuses */
+.p2p-toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 0.25rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-glass);
+}
+
+.p2p-toggle-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  padding: 0.6rem 1rem;
+  border-radius: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.p2p-toggle-btn.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+}
+
+.p2p-toggle-btn:hover:not(.active) {
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.p2p-status-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  border-radius: 16px;
+  background: rgba(79, 70, 229, 0.04);
+  border: 1px solid rgba(79, 70, 229, 0.1);
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.p2p-status-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.p2p-status-value {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.p2p-pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  box-shadow: 0 0 8px var(--color-secondary);
+  animation: p2p-pulse-anim 1.5s infinite ease-in-out;
+}
+
+@keyframes p2p-pulse-anim {
+  0%, 100% { transform: scale(0.8); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 1; }
+}
+

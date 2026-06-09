@@ -1,9 +1,11 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { createServer } from 'http';
 import { initDB } from './config/db.js';
 import shareRoutes from './routes/shareRoutes.js';
 import { startCleanupWorker } from './services/cleanupService.js';
+import { initSocket } from './services/socketService.js';
 
 dotenv.config();
 
@@ -33,6 +35,9 @@ app.get('/health', (req, res) => {
   res.json({ status: 'healthy', timestamp: new Date() });
 });
 
+const server = createServer(app);
+initSocket(server);
+
 // Startup Routine
 const startServer = async () => {
   try {
@@ -43,7 +48,7 @@ const startServer = async () => {
     startCleanupWorker(60000);
     
     // 3. Listen to Port
-    app.listen(PORT, () => {
+    server.listen(PORT, () => {
       console.log(`nokkinokk Server is running on port ${PORT}`);
     });
   } catch (err) {
