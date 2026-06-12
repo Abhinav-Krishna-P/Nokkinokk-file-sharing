@@ -20,6 +20,18 @@ function App() {
       {/* Interactive cursor light effect */}
       <div className="interactive-bg" />
 
+      {/* Ko-fi Button - Top Right Corner */}
+      <div style={{
+        position: 'fixed',
+        top: '1.5rem',
+        right: '1.5rem',
+        zIndex: 1000
+      }}>
+        <a href='https://ko-fi.com/G8N1219627' target='_blank' rel='noopener noreferrer'>
+          <img height='36' style={{ border: '0px', height: '36px' }} src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+        </a>
+      </div>
+
       {/* Brand Header */}
       <header className="app-header">
         <div className="logo-container" style={{ gap: '1rem', alignItems: 'center' }}>
