@@ -20,21 +20,16 @@ function App() {
       {/* Interactive cursor light effect */}
       <div className="interactive-bg" />
 
-      {/* Ko-fi Button - Top Right Corner */}
-      <div style={{
-        position: 'fixed',
-        top: '1.5rem',
-        right: '1.5rem',
-        zIndex: 1000
-      }}>
+      {/* Ko-fi Button */}
+      <div className="support-link">
         <a href='https://ko-fi.com/G8N1219627' target='_blank' rel='noopener noreferrer'>
-          <img height='36' style={{ border: '0px', height: '36px' }} src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+          <img src='https://storage.ko-fi.com/cdn/kofi6.png?v=6' alt='Buy Me a Coffee at ko-fi.com' />
         </a>
       </div>
 
       {/* Brand Header */}
       <header className="app-header">
-        <div className="logo-container" style={{ gap: '1rem', alignItems: 'center' }}>
+        <div className="logo-container">
           {/* Left Eye */}
           <svg className="eye-logo" viewBox="0 0 100 70" width="42" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -96,34 +91,29 @@ function App() {
       </main>
 
       {/* Features Showcase bar */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        gap: '1.5rem',
-        marginBottom: '3rem'
-      }}>
-        <div className="glass-panel" style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+      <div className="features-grid">
+        <div className="glass-panel feature-card">
           <HardDrive size={24} style={{ color: 'var(--color-secondary)' }} />
           <div>
             <h4 style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>100 MB Regular Upload</h4>
             <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Optimized for quick optimized uploads</p>
           </div>
         </div>
-        <div className="glass-panel" style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div className="glass-panel feature-card">
           <HardDrive size={24} style={{ color: 'var(--color-secondary)' }} />
           <div>
             <h4 style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>50GB Network File Transfer</h4>
             <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Capped For Heavy File Transfer</p>
           </div>
         </div>
-        <div className="glass-panel" style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div className="glass-panel feature-card">
           <Shield size={24} style={{ color: 'var(--color-primary)' }} />
           <div>
             <h4 style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>Secure Transfer</h4>
             <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Fail-proof expiry & PIN rate limiting</p>
           </div>
         </div>
-        <div className="glass-panel" style={{ padding: '1.25rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div className="glass-panel feature-card">
           <RefreshCw size={24} style={{ color: 'var(--color-success)' }} />
           <div>
             <h4 style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>Auto Clean-up</h4>
