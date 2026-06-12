@@ -36,6 +36,7 @@ Nokki Nokk is a secure, temporary, and anonymous file and text sharing web appli
 *   **Database**: PostgreSQL (relational metadata, schema uses `ON DELETE CASCADE` constraints).
 *   **Caching/Limiting/Sessions**: Redis (in-memory rate limiters, active PIN-to-upload mappings, and P2P connection session cache).
 
+
 ---
 
 ## ⚙️ Configuration
